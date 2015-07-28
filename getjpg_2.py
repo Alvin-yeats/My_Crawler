@@ -12,11 +12,11 @@ def getHtml(url):
     return html
 
 def getImg(html):
-    reg = r' src="(.+?\.jpg)" '
+    reg = r'src="(.+?\.jpg)" pic_ext'
     imgre = re.compile(reg)
     imglist = re.findall(imgre,html)
 
-    dir = r'e:\github\My_Crawler\img'
+    dir = r'D:\img'
 
     num = 0
     for imgurl in imglist:
@@ -26,5 +26,5 @@ def getImg(html):
 
         num += 1
 
-html = getHtml("http://tieba.baidu.com/p/3927014247")
+html = getHtml('http://tieba.baidu.com/p/3927361321')
 getImg(html)
