@@ -12,7 +12,7 @@ def getHtml(url):
     return html
 
 def getImg(html):
-    reg = r'src="(.+?\.jpg)" data-rawwidth'
+    reg = r' src="(.+?\.jpg)" '
     imgre = re.compile(reg)
     imglist = re.findall(imgre,html)
 
@@ -26,5 +26,5 @@ def getImg(html):
 
         num += 1
 
-html = getHtml("http://www.zhihu.com/question/29134042")
-print getImg(html)
+html = getHtml("http://tieba.baidu.com/p/3927014247")
+getImg(html)
