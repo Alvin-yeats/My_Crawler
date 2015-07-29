@@ -1,6 +1,6 @@
 #UTF-8
 
-__author__ = 'Wayne'
+__author__ = 'Alvin'
 import urllib.request
 import os
 import re
