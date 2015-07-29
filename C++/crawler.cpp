@@ -31,7 +31,7 @@ bool ParseURL( const string & url, string & host, string & resource){
 		return false;
 	char pHost[100];
 	char pResource[2000];
-	sscanf( pos, "%[^/]%s", pHost, pResource );
+	sscanf_s( pos, "%[^/]%s", pHost, 100, pResource ,100 );
 	host = pHost;
 	resource = pResource;
 	return true;
@@ -129,7 +129,7 @@ void HTMLParse ( string & htmlResponse, vector<string> & imgurls, const string &
 		if( nextQ ){
 			char * url = new char[ nextQ-pos+1 ];
 			//char url[100]; //固定大小的会发生缓冲区溢出的危险
-			sscanf( pos, "%[^\"]", url);
+			sscanf_s( pos, "%[^\"]", url, 100);
 			string surl = url;  // 转换成string类型，可以自动释放内存
 			if( visitedUrl.find( surl ) == visitedUrl.end() ){
 				visitedUrl.insert( surl );
@@ -166,7 +166,7 @@ void HTMLParse ( string & htmlResponse, vector<string> & imgurls, const string &
 		const char * nextQ = strstr( pos, "\"");
 		if( nextQ ){
 			char * url = new char[nextQ-pos+1];
-			sscanf( pos, "%[^\"]", url);
+			sscanf_s( pos, "%[^\"]", url, 100);
 			cout << url<<endl;
 			string imgUrl = url;
 			if( visitedImg.find( imgUrl ) == visitedImg.end() ){
