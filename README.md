@@ -25,3 +25,8 @@
 
 - sscnaf函数在vs2010下会产生警告，建议改成安全版sscnaf_s
 - sscnaf函数在vs2013下会产生错误，必须改成安全版sscnaf_s
+
+##联系我
+
+- gmail邮箱:alvinyeats@gmail.com
+- 163邮箱:alvin_yeats@163.com
